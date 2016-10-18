@@ -40,7 +40,7 @@ public class GeolocationService extends BackgroundService {
   private LocationManager locationManager = null;
   private LocationListener locationListener = null;
 
-    private final static String TAG = MyService.class.getSimpleName();
+    private final static String TAG = GeolocationService.class.getSimpleName();
 
     private String mHelloTo = "World";
 
