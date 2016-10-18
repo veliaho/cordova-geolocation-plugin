@@ -30,6 +30,12 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
 
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_INTERNET" />
+
             <service android:name="com.vinka.cordova.plugin.geolocation.GeolocationService">
                 <intent-filter>
                     <action android:name="com.vinka.cordova.plugin.geolocation.GeolocationService"/>
