@@ -23,11 +23,11 @@
     <platform name="android">
 <!--
         <asset src="www/myService.html" target="myService.html" />
-
-        <js-module src="www/myService.js" name="MyService">
-            <clobbers target="cordova.plugins.myService" />
-        </js-module>
  -->
+        <js-module src="www/geolocation.js" name="GeolocationService">
+            <clobbers target="cordova.plugins.GeolocationService" />
+        </js-module>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
 
             <service android:name="com.vinka.cordova.plugin.geolocation.GeolocationService">
