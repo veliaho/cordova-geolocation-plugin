@@ -24,7 +24,8 @@ public class GeolocationService extends BackgroundService {
             Log.d(TAG, "===========================================================================");
             Log.d(TAG, "Location changed : Lat: " + loc.getLatitude() + " Lng: " + loc.getLongitude());
             lastLocation = loc;
-            GeolocationService.this.handleLastResult(this.formatGeopos(loc));
+            GeolocationService.this.handleLastResult(
+                GeolocationService.this.formatGeopos(loc));
         }
 
         @Override
