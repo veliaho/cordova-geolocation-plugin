@@ -63,7 +63,7 @@ public class GeolocationService extends BackgroundService {
         result.put("provider", loc.getProvider());
         result.put("speed", loc.getSpeed());
         result.put("time", loc.getTime());
-        result.put("lng", log.getLongitude());
+        result.put("lng", loc.getLongitude());
 
         return result;
     }
