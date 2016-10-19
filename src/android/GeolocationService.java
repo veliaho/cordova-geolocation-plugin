@@ -57,14 +57,17 @@ public class GeolocationService extends BackgroundService {
     private JSONObject formatGeopos(Location loc) {
         JSONObject result = new JSONObject();
 
-        result.put("accuracy", loc.getAccuracy());
-        result.put("bearing", loc.getBearing());
-        result.put("lat", loc.getLatitude());
-        result.put("lng", loc.getLongitude());
-        result.put("provider", loc.getProvider());
-        result.put("speed", loc.getSpeed());
-        result.put("time", loc.getTime());
-        result.put("lng", loc.getLongitude());
+        try {
+            result.put("accuracy", loc.getAccuracy());
+            result.put("bearing", loc.getBearing());
+            result.put("lat", loc.getLatitude());
+            result.put("lng", loc.getLongitude());
+            result.put("provider", loc.getProvider());
+            result.put("speed", loc.getSpeed());
+            result.put("time", loc.getTime());
+            result.put("lng", loc.getLongitude());
+        } catch (JSONException e) {
+        }
 
         return result;
     }
@@ -73,13 +76,10 @@ public class GeolocationService extends BackgroundService {
     protected JSONObject doWork() {
         JSONObject result = new JSONObject();
 
-        try {
-            if (this.lastLocation != null) {
-                result = this.formatGeopos(this.lastLocation);
-            } else {
-                Log.d(TAG, "/////// doWork() does not have location");
-            }
-        } catch (JSONException e) {
+        if (this.lastLocation != null) {
+            result = this.formatGeopos(this.lastLocation);
+        } else {
+            Log.d(TAG, "/////// doWork() does not have location");
         }
 
         return result;
