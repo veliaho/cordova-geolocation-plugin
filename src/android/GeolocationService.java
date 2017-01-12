@@ -16,8 +16,8 @@ import com.red_folder.phonegap.plugin.backgroundservice.BackgroundService;
 
 public class GeolocationService extends BackgroundService {
 
-    private static final MIN_TIME = 5;  // location changes must be at least 5 seconds apart
-    private static final MIN_DIST = 10; // location changes must be at least 10 meters apart
+    private static final int MIN_TIME = 5;  // location changes must be at least 5 seconds apart
+    private static final int MIN_DIST = 10; // location changes must be at least 10 meters apart
 
     private class ViperLocationListener implements LocationListener {
         private final static String TAG = "VIPER_LOCATION";
